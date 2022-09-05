@@ -1,0 +1,30 @@
+footer {
+    background-color: turquoise;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 150px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    margin-top: 100px;
+    box-sizing: border-box;
+  }
+  
+  .icon {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .circle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: orangered;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+ 
+  
