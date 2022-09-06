@@ -1,22 +1,20 @@
 import React, { useState } from "react";
 import { Formik } from "formik";
+import styles from "./NewRecipe.module.css";
 
 const NewRecipeScreen = () => {
-  
   const [ingredients, setIngredients] = useState([]);
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState("");
   const url = "https://recipes.devmountain.com";
 
-
-  // Ingredientes
   const addIngredient = () => {
     setIngredients([...ingredients, { name, quantity }]);
     setName("");
     setQuantity("");
   };
 
-  // Create your own initial values and onSubmit
+
   const initialValues = {
     type: "",
     recipeName: "",
@@ -28,10 +26,12 @@ const NewRecipeScreen = () => {
     instructions: "",
   };
 
+
   const onSubmit = (values) => {
     values.ingredients = ingredients;
     console.log(values);
   };
+ 
 
   const ingredientDisplay = ingredients.map((ing) => {
     return (
@@ -44,8 +44,6 @@ const NewRecipeScreen = () => {
   return (
     <section>
       <h1>Tell us about your Recipe!</h1>
-
-      {/* Formik to handle the form */}
       <Formik initialValues={initialValues} onSubmit={onSubmit}>
         {({ values, handleChange, handleSubmit }) => (
           <form onSubmit={handleSubmit}>
@@ -63,7 +61,7 @@ const NewRecipeScreen = () => {
                 name="imageURL"
               />
             </div>
-            <div>
+            <div className={styles.radio}>
               <span>
                 <input
                   type="radio"
@@ -139,7 +137,7 @@ const NewRecipeScreen = () => {
               onChange={handleChange}
               name="instructions"
             />
-            <button>
+            <button type="submit">
               Submit
             </button>
           </form>

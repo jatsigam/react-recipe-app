@@ -1,14 +1,15 @@
 import React from "react";
+import styles from "./Details.module.css";
 
 const DetailImage = ({ image, title }) => {
   const backgroundString = `--background: url(${image})`
   return (
     <div
+      className={styles.cover}
       style={{
         backgroundSize: "cover",
         background: `linear-gradient(190deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${image})`
       }}
-   
     >
       <div>
         <h1>{title}</h1>

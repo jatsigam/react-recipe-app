@@ -1,6 +1,6 @@
 import React from "react";
 import { ImFacebook, ImInstagram, ImTwitter, ImGithub } from "react-icons/im";
-import styles from "./Footer.css";
+import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
